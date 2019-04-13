@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <title> Hotel Fazenda Jasper </title>
+    <script src="_javascript/funcoes.js"></script>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    <link rel="stylesheet" type="text/css" href="_css/fotos.css"/>
+
+</head>
+<body>
+    <div id="conteudo">
+        <header id="cabecalho">
+            <nav id="menu">
+                <ul>
+                    <a href="index.html"><li> O Hotel </li></a>
+                    <a href="fotos.html"><li> Fotos </li></a>
+                    <a href="multimidia.html"><li> Multimídia </li></a>
+                    <a href="atividades.html"><li> atividades</li></a>
+                    <a href="specs.html"><li> Localização </li></a>
+                    <a href="fale-conosco.html"><li> Contato </li></a>
+                </ul>
+            </nav>
+            <br>
+            <h1>  <img id="logo" src="_imagens/hfj.png"/> </h1>
+
+            <img id="icone" src="_imagens/hfj.dois.png"/>
+        </header>
+        <section>
+            <article id="noticia">
+                <h3>
+                    Fale Conosco > Contato
+                </h3>
+                <h1> Faça seu Orçamento </h1>
+                <h3> por Jéssica e Maria Eduarda </h3>
+                <h3> Atualizado em 15/Abril/2019 </h3>
+                <div class="text-position">
+                    <form id="">
+                        <fieldset>
+                            <legend>
+                                Identificação do Usuário
+                            </legend>
+                            <div>
+                                <label for="nome" class="div-form"> Nome: </label>
+                                <input id="nome" type="text" placeholder="Nome completo">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="senha"> Senha: </label>
+                                <input id="senha" type="password" placeholder="8 digitos">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="email"> E-mail: </label>
+                                <input id="email" type="email" placeholder="exemplo@email.com">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="data"> Data de Nascimento: </label>
+                                <input id="data" type="date">
+                            </div>
+
+                        </fieldset>
+                        <fieldset id="endereco">
+                            <legend> Endereço do Usuário </legend>
+                            <div>
+
+                                <label for="logradouro"> Logradouro: </label>
+                                <input type="text" id="logradouro"
+                                placeholder="Rua, Av, etc..."/>
+                            </div>
+                            <br>
+                            <div>
+
+                                <label for="numero"> Número: </label>
+                                <input type="number" id="numero" min="0"/>
+                            </div>
+
+                            <div>
+                                <br>
+
+                                <label for="estado">
+                                    Estado:
+                                </label>
+                                <select id="estado">
+                                    <option value="SP"> São Paulo </option>
+                                    <option value="MG"> Minas Gerais </option>
+                                    <option value="RJ"> Rio de Janeiro </option>
+                                    <option value="ES"> Espírito Santo </option>
+                                </select>
+                            </div>
+                            <br>
+
+                            <div>
+                                <label for="cidade"> Cidade: </label>
+                                <input type="text" id="cidade">
+                            </div>
+                        </fieldset>
+
+                    </fieldset>
+                    <fieldset id="pedido">
+                        <legend> Faça seu orçamento </legend>
+
+
+                        <input type="text" name="daterange" value="" />
+                        <br><br>Dias de diferença: <br>
+
+                        <div><span>R$ </span><span id="qtdDias"></span></div>
+
+                    </fieldset>
+
+                    <fieldset id="mensagem">
+                        <div>
+                            <label for="mensagem"> Mensagem: </label>
+                        </div>
+
+                        <div>
+
+                            <textarea
+                            id="mensagem"
+                            cols="50"
+                            rows="10"
+                            placeholder="Digite aqui sua mensagem"></textarea>
+                        </div>
+
+
+                        <input type="image" src="_imagens/enviar2.png" width="100px"/>
+                    </form>
+                </div>
+            </article>
+        </section>
+        <footer id="rodape">
+            <p>
+                Copyright 2019 - by Jéssica e Maria Eduarda.
+                <br/> Facebook | Twitter
+            </p>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+
+
+    <script>
+    const milis_day = 1000 * 60 * 60 * 24;
+
+    $(function() {
+        $('input[name="daterange"]').daterangepicker();
+    });
+    $('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+        var pick1 = new Date(picker.startDate.format('YYYY-MM-DD')); // primeira data
+        var pick2 = new Date(picker.endDate.format('YYYY-MM-DD')); // segunda data
+        var utc1 = Date.UTC(pick1.getFullYear(), pick1.getMonth(), pick1.getDate());
+        var utc2 = Date.UTC(pick2.getFullYear(), pick2.getMonth(), pick2.getDate());
+
+        var diff = Math.floor((utc2 - utc1) / milis_day)
+        let valueDays = diff * 300
+        $('#qtdDias').html(valueDays);
+    });
+
+    // $('#btn').click(function(){
+    //     var inicio = $('#inicio').val(),
+    //         fim = $('#fim').val();
+    //     console.log('data inicial: ' + inicio + ' data final: ' +fim);
+    //
+    // })
+
+
+</script>
+</body>
+</html>

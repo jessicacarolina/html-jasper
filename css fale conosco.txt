@@ -1,0 +1,20 @@
+#logo {
+  position: relative; /* posição atual da foto */
+  top: -90px; /* desloca para cima < 0 */
+  top: -20px;
+  left: 600px; /* desloca para direita */
+  margin: 0%;
+  border: none;
+  width: 200px;
+}
+
+#principal {
+  position: relative; /* posição atual da foto */
+  top: 30px; /* desloca para cima < 0 */
+  top: -5px;
+  left: -180px; /* desloca para direita */
+  border: none;
+  margin: 0%;
+  width: 100px;
+
+}

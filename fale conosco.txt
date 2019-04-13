@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head> 
+        <meta charset="utf-8"/>
+        <title> Hotel Fazenda Jasper </title>
+        <script src="_javascript/funcoes.js"></script>
+        <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+        <link rel="stylesheet" type="text/css" href="_css/fotos.css"/>
+        <style>
+            fieldset {
+                border-bottom-color: #cecece;
+                margin: 20px;
+            }
+            form {
+                width: 500px;
+                margin: auto;
+            }
+            legend {
+                color: #888;
+                font-size: 13pt;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="conteudo">
+            <header id="cabecalho">
+                <nav id="menu">
+                    <ul>
+                        <a href="index.html"><li> O Hotel </li></a>
+                        <a href="fotos.html"><li> Fotos </li></a>
+                        <a href="multimidia.html"><li> Multimídia </li></a>
+                        <a href="specs.html"><li> Localização </li></a>
+                        <a href="fale-conosco.html"><li> Contato </li></a>
+                    </ul>
+                </nav>        
+                <h1> Hotel Fazenda Jasper </h1>
+            
+                <img id="logo" src="_imagens/hfj.dois.png"/>
+                <img id="principal" src="_imagens/hfj.png"/>
+            </header>
+            <section>
+                <article id="noticia">
+                    <h3> 
+                        Fale Conosco > Contato
+                    </h3>
+                    <h1> Formulário de Contato </h1>
+                    <h3> por Jéssica e Maria Eduarda </h3>
+                    <h3> Atualizado em 15/Abril/2019 </h3>
+
+                    <form id="contato" method="post" action="programa.php">    
+                        <fieldset id="usuario"> 
+                            <legend> 
+                                Identificação do Usuário
+                            </legend>    
+                            <p> 
+                                <label for="nome"> Nome: </label>
+                                <input id="nome" type="text" placeholder="Nome completo">
+                            </p>    
+                            <p>
+                                <label for="senha"> Senha: </label>    
+                                <input id="senha" type="password" placeholder="8 digitos">
+                            </p>
+                            <p> 
+                                <label for="email"> E-mail: </label>
+                                <input id="email" type="email" placeholder="exemplo@email.com">
+                            </p>
+                               
+                            <p> 
+                                <label for="data"> Data de Nascimento: </label>
+                                <input id="data" type="date">    
+                            </p>                              
+                            
+                        </fieldset>        
+                        <fieldset id="endereco">
+                            <legend> Endereço do Usuário </legend>
+                                <p> 
+                                    <label for="logradouro"> Logradouro: </label>
+                                    <input type="text" id="logradouro" 
+                                            placeholder="Rua, Av., etc..."/>
+                                </p>
+                                <p> 
+                                    <label for="numero"> Número: </label> 
+                                    <input type="number" id="numero" min="0"/>
+                                </p>
+                                <p> 
+                                    <label for="estado"> 
+                                        Estado: 
+                                    </label>
+                                    <select id="estado">
+                                        <option value="SP"> São Paulo </option>
+                                        <option value="MG"> Minas Gerais </option>
+                                        <option value="RJ"> Rio de Janeiro </option>
+                                        <option value="ES"> Espírito Santo </option>
+                                    </select>    
+                                </p>
+                                <p> 
+                                    <label for="cidade"> Cidade: </label>
+                                    <input type="date" type="date">
+                                </p>
+                        </fieldset>    
+                        
+                        </fieldset>        
+                        <fieldset id="pedido">
+                            <legend> Quero minha reserva </legend>
+                            <p> 
+                                <input type="checkbox" id="gostaria"/> 
+                                <label for="gostaria">
+                                        Gostaria de agendar um data.     
+                                </label>
+                            </p>
+                            <p> 
+                                <label for="data"> Check-in: </label>
+                                <input type="date" />
+                            </p>
+                            <p> 
+                                <label for="data"> Check-out </label>
+                                <input type="date" />
+                            </p>
+                            <p> 
+                                <label for="preco"> Preço Total: R$ </label>
+                                <input type="number" id="preco" min="0"/> 
+                            </p>
+                        </fieldset>   
+                        
+                        <fieldset id="mensagem">
+                            <legend> Mensagem do Usuário </legend>
+                            <p> 
+                                <label for="reserva"> Data da Reserva </label>
+                                 <input type="date" >   
+                            </p>
+                            <p>     
+                                    <label for="mensagem"> Mensagem: </label>
+                            </p>    
+                            <p> 
+                                   <textarea 
+                                    id="mensagem" 
+                                    cols="50" 
+                                    rows="10" 
+                                    placeholder="Digite aqui sua mensagem"></textarea>
+                            </p>    
+
+                    <input type="image" src="_imagens/enviar"/>
+            </form>        
+
+</article>
+</section>        
+<footer id="rodape">
+    <p> 
+        Copyright 2013 - by Jéssica e Maria Eduarda.
+        <br/> Facebook | Twitter
+    </p>
+</footer>   
+</div> 
+</body>
+</html>
